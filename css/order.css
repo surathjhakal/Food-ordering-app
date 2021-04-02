@@ -1,0 +1,57 @@
+.food_order_content {
+  width: 70%;
+  margin: 1rem auto;
+  border-radius: 4px;
+  color: rgb(88, 88, 88);
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.food_order_content_title {
+  text-align: center;
+  color: rgb(88, 88, 88);
+}
+.food_order_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+}
+.selected_food {
+  display: flex;
+  justify-content: space-between;
+}
+fieldset {
+  border: 1px solid rgb(184, 184, 184);
+  padding: 1rem;
+}
+legend {
+  width: 45%;
+  text-align: center;
+}
+.food_order_form {
+  width: 40%;
+  margin: auto;
+}
+.food_order_info {
+  flex: 0.85;
+}
+.food_quantity,
+.user_data_info {
+  background-color: white;
+  padding: 4px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  width: 100%;
+  margin: 4px 0;
+}
+.order_submit {
+  padding: 10px;
+  background-color: rgb(13, 199, 13);
+  cursor: pointer;
+  outline: none;
+  color: white;
+  border-radius: 0.4rem;
+  border: none;
+}
