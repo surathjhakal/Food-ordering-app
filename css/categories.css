@@ -1,0 +1,45 @@
+.food_categories_content {
+  width: 80%;
+  background-color: #ececec;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  border-radius: 4px;
+}
+
+.food_categories_title {
+  text-align: center;
+  border-bottom: 1px solid #747d8c;
+  padding-bottom: 10px;
+}
+
+.food_categories_line {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+  margin-top: 1.6rem;
+}
+
+.food_categories_box {
+  height: 31rem;
+  width: 100%;
+  border-radius: 10px;
+  flex: 0.31;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+.food_categories_box:hover {
+  transform: scale(1.04);
+  text-decoration: none;
+}
+
+.food_name {
+  color: white;
+  text-align: center;
+  margin-top: 140%;
+  text-decoration: none;
+}

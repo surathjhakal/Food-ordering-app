@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: rgb(221, 218, 218);
+  color: rgb(99, 99, 99);
+}
+
+.navbar_food_logo {
+  height: 70px;
+  width: 150px;
+  background: transparent;
+}
+
+.navbar_options {
+  font-size: 1.2rem;
+  margin: 0px 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.6rem 0 1rem 0;
+}
