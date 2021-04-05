@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 2rem;
+  width: 100%;
 }
 .food_menu {
   width: 80%;

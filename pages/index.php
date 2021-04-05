@@ -1,78 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Website</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-  </head>
-
-  <body>
+<?php include('reuseComponents/base.php') ?>
     <div class="food_app">
-
-      
-      <nav
-        class="navbar navbar-expand-lg navbar-light bg-light"
-        style="padding: 0rem 0.8rem"
-      >
-        <a class="navbar-brand food_logo_top" href="#"
-          ><img
-            src="https://media4.giphy.com/media/cdJFgAkVX8izFZ5fj9/source.gif"
-            class="navbar_food_logo"
-            alt=""
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="collapse navbar-collapse navbar_items"
-          id="navbarSupportedContent"
-        >
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link navbar_options" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar_options" href="categories.html">Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar_options" href="foods.html">Foods</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link navbar_options" href="#">Contact</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </nav>
-
-
+      <?php include('reuseComponents/navbar.php') ?>
       <div class="food_content">
         <div
           id="carouselExampleIndicators"
@@ -261,21 +189,5 @@
             </div>
           </div>
         </div>
+<?php include('reuseComponents/footer.php') ?>
         
-        <div class="footer">
-          <p>All rights reserved. Designed By <a href="#">Surath Jhakal </a></p>
-        </div>
-    </div>
-
-  </body>
-  <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"
-  ></script>
-</html>

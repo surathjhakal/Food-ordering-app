@@ -16,20 +16,25 @@
 
 .food_categories_line {
   display: flex;
-  justify-content: space-between;
   width: 75%;
   margin: auto;
   margin-top: 1.6rem;
 }
 
 .food_categories_box {
+  display: flex;
+  flex-direction: column;
   height: 31rem;
   width: 100%;
   border-radius: 10px;
-  flex: 0.31;
+  flex: 0.33;
   cursor: pointer;
   transition: all 0.4s;
   text-decoration: none;
+  margin: 0.7rem;
+  border: 2px solid #717171;
+  justify-content: space-between;
+  background-color: #717171;
 }
 
 .food_categories_box:hover {
@@ -40,6 +45,11 @@
 .food_name {
   color: white;
   text-align: center;
-  margin-top: 140%;
-  text-decoration: none;
+}
+
+.food_categories_background_image {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 90%;
 }
