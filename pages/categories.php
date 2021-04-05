@@ -1,7 +1,7 @@
 <?php include('../config/constants.php') ?>
 <?php
 
-  $sql = "SELECT title, image_name, active FROM category";
+  $sql = "SELECT id,title, image_name, active FROM category";
   $result = mysqli_query($conn, $sql);
   
 ?>
@@ -12,7 +12,7 @@
         <h2 class="food_categories_title">All Categories of Food</h2>
         <?php 
           $counter=0;
-          while($counter<=5){
+          while($counter<((int)mysqli_num_rows($result)/3)){
 
         ?>
         <div class="food_categories_line">
@@ -28,7 +28,7 @@
           
           <a
             class="food_categories_box"
-            href="./categoryFoods.php"
+            href="<?php echo SITEURL; ?>categoryFoods.php?id=<?php echo $row['id'] ?>&category=<?php echo $row['title']; ?>"
           >
           <img class="food_categories_background_image" src="../images/<?php echo $row["image_name"]; ?>" alt="">
             <h3 class="food_name"><?php echo $row["title"]; ?></h3>

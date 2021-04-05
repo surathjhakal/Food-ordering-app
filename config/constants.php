@@ -1,4 +1,8 @@
 <?php
+
+    session_start();
+
+    define('SITEURL','http://localhost/food-app/pages/');
     define('LOCALHOST','localhost');
     define('DB_USERNAME','root');
     define('DB_PASSWORD','');
