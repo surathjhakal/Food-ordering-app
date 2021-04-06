@@ -1,9 +1,9 @@
 <?php include('../config/constants.php') ?>
 <?php
-
+  $foodSearch=$_GET["food_search"];
   $sql = "SELECT title, image_name, price FROM food";
   $result = mysqli_query($conn, $sql);
-  
+  $count=0;
 ?>
 <?php include('reuseComponents/base.php') ?>
     <div class="foods">
@@ -11,13 +11,28 @@
       <div class="foods_menu_top">
         <div class="food_menu">
           <h2 class="food_menu_title">All Food Items</h2>
-          <input
-            type="text"
-            placeholder="Enter your favourite food name"
-            class="food_search"
-          />
+          <form action="foods.php" method="get">
+            <input
+              type="text"
+              class="food_search"
+              name="food_search"
+              autocomplete="off"
+              <?php if($foodSearch==''){ ?>
+              placeholder="Enter your favourite food name"
+              <?php }else{ ?>
+              value="<?php echo $foodSearch ?>"
+              <?php } ?>
+            />
+          </form>
           <hr />
           <?php 
+          if($foodSearch!=''){
+            $sql="SELECT * FROM food WHERE title LIKE '%$foodSearch%'";
+            $result=mysqli_query($conn,$sql);
+          }else{
+            $sql = "SELECT * FROM food";
+            $result = mysqli_query($conn, $sql);
+          }
           $counter=0;
           while($counter<((int)mysqli_num_rows($result)/2))
           {
@@ -26,10 +41,11 @@
           <?php
             $innerCount=0;
             while(true) {
-              if($innerCount==2){
+              if($innerCount==2 or $count>=mysqli_num_rows($result)){
                 break;
               }
               $row = mysqli_fetch_assoc($result);
+              $count+=1;
           ?>
             <div class="food_item">
               <div class="food_item_image">
@@ -46,7 +62,7 @@
                   Made with lots of something..
                 </p>
                 <p class="food_star">⭐⭐⭐⭐⭐</p>
-                <a href="order.php" class="food_menu_orderNow">Order Now</a>
+                <a href="<?php echo SITEURL; ?>order.php?id=<?php echo $row['id'] ?>" class="food_menu_orderNow">Order Now</a>
               </div>
             </div>
             <?php

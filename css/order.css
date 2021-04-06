@@ -39,12 +39,12 @@ legend {
 .food_quantity,
 .user_data_info {
   background-color: white;
-  padding: 4px;
+  padding: 6px;
   border: none;
   outline: none;
   border-radius: 4px;
   width: 100%;
-  margin: 4px 0;
+  margin: 8px 0;
 }
 .order_submit {
   padding: 10px;

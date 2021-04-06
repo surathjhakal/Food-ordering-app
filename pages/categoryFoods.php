@@ -48,7 +48,7 @@
                   Made with lots of something..
                 </p>
                 <p class="food_star">⭐⭐⭐⭐⭐</p>
-                <a href="order.php" class="food_menu_orderNow">Order Now</a>
+                <a href="<?php echo SITEURL; ?>order.php?id=<?php echo $row['id'] ?>" class="food_menu_orderNow">Order Now</a>
               </div>
             </div>
             <?php

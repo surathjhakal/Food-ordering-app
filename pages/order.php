@@ -1,9 +1,18 @@
+<?php include('../config/constants.php') ?>
+<?php
+  $id=$_GET['id'];
+  $sql="SELECT * FROM food WHERE id=$id";
+  $result=mysqli_query($conn,$sql);
+  $data=mysqli_fetch_assoc($result);
+  mysqli_close($conn);
+?>
+
 <?php include('reuseComponents/base.php') ?>
     <div class="food_order">
     <?php include('reuseComponents/navbar.php') ?>
       <div class="food_order_content">
         <h2 class="food_order_content_title">
-          Fill this form to confirm your order.
+          Confirm your order.
         </h2>
         <hr />
         <form action="#" class="food_order_form">
@@ -12,15 +21,15 @@
 
             <div class="food_order_imgage_top">
               <img
-                src="../images/menu-pizza.jpg"
-                alt="Chicke Hawain Pizza"
+                src="../images/<?php echo $data["image_name"]; ?>"
+                alt="food image"
                 class="food_order_image"
               />
             </div>
 
             <div class="food_order_info">
-              <h3>My Pizza</h3>
-              <p class="food_price">$2.3</p>
+              <h3><?php echo $data["title"]; ?></h3>
+              <p class="food_price"><?php echo "₹".$data["price"]; ?></p>
 
               <div>Quantity</div>
               <input
