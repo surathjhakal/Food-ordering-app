@@ -11,6 +11,14 @@
       <?php include('reuseComponents/banner.php') ?>
         <div class="food_menu_top">
           <div class="food_menu">
+            <?php
+              if(isset($_SESSION['order_confirmed'])){
+                echo "<p style='text-align:center;font-size:1.6rem;color:green'>(";
+                echo $_SESSION['order_confirmed'];
+                echo ")</p>";
+                unset($_SESSION['order_confirmed']);
+              }
+            ?>
             <h2 class="food_menu_title">Top Rated Food</h2>
             <?php 
               $counter=0;

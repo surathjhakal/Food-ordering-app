@@ -4,7 +4,6 @@
   $sql="SELECT * FROM food WHERE id=$id";
   $result=mysqli_query($conn,$sql);
   $data=mysqli_fetch_assoc($result);
-  mysqli_close($conn);
 ?>
 
 <?php include('reuseComponents/base.php') ?>
@@ -12,10 +11,10 @@
     <?php include('reuseComponents/navbar.php') ?>
       <div class="food_order_content">
         <h2 class="food_order_content_title">
-          Confirm your order.
+          Confirm your order
         </h2>
         <hr />
-        <form action="#" class="food_order_form">
+        <form action="" method="POST" class="food_order_form">
           <fieldset class="selected_food">
             <legend>Selected Food</legend>
 
@@ -34,7 +33,7 @@
               <div>Quantity</div>
               <input
                 type="number"
-                name="qty"
+                name="quantity"
                 class="food_quantity"
                 value="1"
                 required
@@ -89,4 +88,28 @@
           </fieldset>
         </form>
       </div>
-      <?php include('reuseComponents/footer.php') ?>
+    </div> 
+    <?php include('reuseComponents/footer.php') ?>
+    <?php
+    if(isset($_POST['submit'])){
+        date_default_timezone_set("Asia/Kolkata");
+        $customer_name=$_POST['fullName'];
+        $customer_contact=$_POST['contact'];
+        $customer_email=$_POST['email'];
+        $customer_address=$_POST['address'];
+        $quantity=$_POST['quantity'];
+        $total=(double)$quantity*$data['price'];
+        $date=date('Y-m-d H:i:s');
+
+        $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_name,customer_contact,customer_email,customer_address,order_time) 
+        VALUES ('$id','$quantity','$total','active','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
+        $result=mysqli_query($conn,$sql_order_query);
+        if($result){
+          $_SESSION['order_confirmed']="Your order has been confirmed $customer_name, Hurray!!!";
+          echo "<script type='text/javascript'>  window.location='index.php'; </script>";
+        }else{
+          $_SESSION['order_confirmed']="Your order has not been confirmed because of some technical issue";
+        }
+        mysqli_close($conn);
+      }
+    ?>
