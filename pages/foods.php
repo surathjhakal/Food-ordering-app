@@ -1,7 +1,7 @@
 <?php include('../config/constants.php') ?>
 <?php
   $foodSearch=$_GET["food_search"];
-  $sql = "SELECT title, image_name, price FROM food";
+  $sql = "SELECT * FROM food";
   $result = mysqli_query($conn, $sql);
   $count=0;
 ?>
@@ -11,7 +11,7 @@
       <div class="foods_menu_top">
         <div class="food_menu">
           <h2 class="food_menu_title">All Food Items</h2>
-          <form action="foods.php" method="get">
+          <form action="" method="get">
             <input
               type="text"
               class="food_search"
