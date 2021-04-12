@@ -4,11 +4,11 @@
   $result = mysqli_query($conn, $sql);
   $count=0;
 ?>
-<?php include('reuseComponents/base.php') ?>
+<?php include('../reusePages/base.php') ?>
     <div class="food_app">
-      <?php include('reuseComponents/navbar.php') ?>
+      <?php include('./navbar.php') ?>
       <div class="food_content">
-      <?php include('reuseComponents/banner.php') ?>
+      <?php include('../reusePages/banner.php') ?>
         <div class="food_menu_top">
           <div class="food_menu">
             <?php
@@ -67,5 +67,6 @@
             </div>
           </div>
         </div>
-<?php include('reuseComponents/footer.php') ?>
+  <?php include('../reusePages/footer.php') ?>
+
         

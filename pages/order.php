@@ -6,9 +6,9 @@
   $data=mysqli_fetch_assoc($result);
 ?>
 
-<?php include('reuseComponents/base.php') ?>
+<?php include('../reusePages/base.php') ?>
     <div class="food_order">
-    <?php include('reuseComponents/navbar.php') ?>
+    <?php include('./navbar.php') ?>
       <div class="food_order_content">
         <h2 class="food_order_content_title">
           Confirm your order
@@ -89,7 +89,7 @@
         </form>
       </div>
     </div> 
-    <?php include('reuseComponents/footer.php') ?>
+    <?php include('../reusePages/footer.php') ?>
     <?php
     if(isset($_POST['submit'])){
         date_default_timezone_set("Asia/Kolkata");

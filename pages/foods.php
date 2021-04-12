@@ -5,9 +5,9 @@
   $result = mysqli_query($conn, $sql);
   $count=0;
 ?>
-<?php include('reuseComponents/base.php') ?>
+<?php include('../reusePages/base.php') ?>
     <div class="foods">
-    <?php include('reuseComponents/navbar.php') ?>
+    <?php include('./navbar.php') ?>
       <div class="foods_menu_top">
         <div class="food_menu">
           <h2 class="food_menu_title">All Food Items</h2>
@@ -62,7 +62,7 @@
                   Made with lots of something..
                 </p>
                 <p class="food_star">⭐⭐⭐⭐⭐</p>
-                <a href="<?php echo SITEURL; ?>order.php?id=<?php echo $row['id'] ?>" class="food_menu_orderNow">Order Now</a>
+                <a href="./order.php?id=<?php echo $row['id'] ?>" class="food_menu_orderNow">Order Now</a>
               </div>
             </div>
             <?php
@@ -79,5 +79,5 @@
         </div>
       </div>
     </div>
-  <?php include('reuseComponents/footer.php') ?>
+    <?php include('../reusePages/footer.php') ?>
 

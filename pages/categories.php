@@ -5,9 +5,9 @@
   $result = mysqli_query($conn, $sql);
   
 ?>
-<?php include('reuseComponents/base.php') ?>
+<?php include('../reusePages/base.php') ?>
     <div class="food_categories">
-    <?php include('reuseComponents/navbar.php') ?>
+    <?php include('./navbar.php') ?>
       <div class="food_categories_content">
         <h2 class="food_categories_title">All Categories of Food</h2>
         <?php 
@@ -46,6 +46,4 @@
       </div>
     </div>
 
-    <?php include('reuseComponents/footer.php') ?>
-
-    <?php include('../config/constants.php') ?>
+    <?php include('../reusePages/footer.php') ?>

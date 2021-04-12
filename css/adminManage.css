@@ -1,0 +1,29 @@
+.adminManageContent {
+  margin: 5% 10%;
+}
+.table {
+  margin: 2% 0;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.addAdminButton {
+  padding: 1rem;
+  font-size: 20px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  outline: none;
+  color: rgb(99, 99, 99);
+  text-decoration: none;
+}
+
+.addAdminButton:hover {
+  background-color: rgb(99, 99, 99);
+  cursor: pointer;
+  color: #fff;
+}
+
+.addAdminForm {
+  margin: auto;
+  width: 50%;
+}
