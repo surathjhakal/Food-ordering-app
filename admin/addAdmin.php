@@ -33,7 +33,6 @@
         $result=mysqli_query($conn,$sql_order_query);
 
         if($result){
-            echo "true";
           $_SESSION['admin_added']="Admin has been added!!!";
           echo "<script type='text/javascript'>  window.location='adminManage.php'; </script>";
         }else{
