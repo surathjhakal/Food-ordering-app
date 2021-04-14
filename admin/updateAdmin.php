@@ -7,7 +7,7 @@
 ?>
 <?php include('../reusePages/base.php') ?>
 <div class="addAdmin">
-    <?php include('./navbar/mainNavbar.php') ?>
+    <?php include('./navbar.php') ?>
     <div class="adminManageContent">
         <h2 style="text-align:center;">Update Admin</h2>
         <hr>

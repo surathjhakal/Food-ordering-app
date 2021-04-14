@@ -5,7 +5,7 @@
     $result = mysqli_query($conn, $sql);
 ?>
 <div class="adminManage">
-    <?php include('./navbar/mainNavbar.php') ?>
+    <?php include('./navbar.php') ?>
     <div class="adminManageContent">
         <h2>Manage Food</h2>
         <hr>
@@ -62,8 +62,8 @@
                     <td><?php echo $row1['title'] ?></td>
                     <td><?php echo $row['price']; ?></td>
                     <td><?php echo $row['featured']; ?></td>
-                    <td><a href="./adminFoodUpdate.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update</a>
-                    <a href="./adminFoodDelete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+                    <td><a href="./updateFood.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update</a>
+                    <a href="./deleteFood.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
                 </tr>
             <?php
                 $sr+=1;

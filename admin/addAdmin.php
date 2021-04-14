@@ -1,7 +1,7 @@
 <?php include('../config/constants.php') ?>
 <?php include('../reusePages/base.php') ?>
 <div class="addAdmin">
-    <?php include('./navbar/mainNavbar.php') ?>
+    <?php include('./navbar.php') ?>
     <div class="adminManageContent">
         <h2 style="text-align:center;">Add Admin</h2>
         <hr>
@@ -34,7 +34,7 @@
 
         if($result){
           $_SESSION['admin_added']="Admin has been added!!!";
-          echo "<script type='text/javascript'>  window.location='adminManage.php'; </script>";
+          echo "<script type='text/javascript'>  window.location='./adminManage.php'; </script>";
         }else{
           $_SESSION['admin_added']="Admin ahs not been added!! please try again..";
         }

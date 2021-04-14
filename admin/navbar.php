@@ -1,3 +1,4 @@
+<?php include('../reusePages/navbar/navbarUp.php') ?>
 <ul class="navbar-nav ml-auto">
     <li class="nav-item">
         <a class="nav-link navbar_options" href="./adminManage.php">Admin</a>
@@ -15,3 +16,4 @@
         <a class="nav-link navbar_options" href="./adminOrderManage.php">Order</a>
     </li>
 </ul>
+<?php include('../reusePages/navbar/navbarDown.php') ?>

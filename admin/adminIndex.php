@@ -1,6 +1,6 @@
 <?php include('../config/constants.php') ?>
 <?php include('../reusePages/base.php') ?>
 <div class="admin">
-    <?php include('./navbar/mainNavbar.php') ?>
+    <?php include('./navbar.php') ?>
 </div>
 <?php include('../reusePages/footer.php') ?>
