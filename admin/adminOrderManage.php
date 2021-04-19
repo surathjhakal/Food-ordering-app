@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php include('../reusePages/base.php') ?>
 <?php
     $sql="SELECT * FROM order_detail";
@@ -20,6 +21,7 @@
             <th scope="col">Phone No.</th>
             <th scope="col">Email Id</th>
             <th scope="col">Address</th>
+            <th scope="col">Time</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +42,7 @@
                     <td><?php echo $row['customer_contact']; ?></td>
                     <td><?php echo $row['customer_email']; ?></td>
                     <td><?php echo $row['customer_address']; ?></td>
+                    <td><?php echo $row['order_time']; ?></td>
                 </tr>
             <?php
                 $sr+=1;

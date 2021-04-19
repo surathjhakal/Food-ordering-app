@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php include('../reusePages/base.php') ?>
 <?php
     $sql="SELECT * FROM adminTable";
@@ -33,6 +34,14 @@
                 unset($_SESSION['admin_updated']);
             }
         ?>
+        <?php
+            if(isset($_SESSION['password_updated'])){
+                $message=$_SESSION['password_updated'];
+                echo "<h5 style='color:green'>($message)</h5>";
+                echo "<hr>";
+                unset($_SESSION['password_updated']);
+            }
+        ?>
         <table class="table">
         <thead class="thead-light">
             <tr>
@@ -51,7 +60,8 @@
                     <th scope="row"><?php echo $sr; ?></th>
                     <td><?php echo $row['full_name']; ?></td>
                     <td><?php echo $row['email']; ?></td>
-                    <td><a href="./updateAdmin.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update</a>
+                    <td><a href="./updatePassword.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Change Password</a>
+                    <a href="./updateAdmin.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update</a>
                     <a href="./deleteAdmin.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
                 </tr>
             <?php

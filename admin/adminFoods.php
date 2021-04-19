@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php include('../reusePages/base.php') ?>
 <?php
     $sql="SELECT * FROM food";
