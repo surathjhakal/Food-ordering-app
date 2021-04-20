@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php
   $sql = "SELECT * FROM food WHERE featured='true'";
   $result = mysqli_query($conn, $sql);
@@ -68,5 +69,3 @@
           </div>
         </div>
   <?php include('../reusePages/footer.php') ?>
-
-        

@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php
   $foodSearch=$_GET["food_search"];
   $sql = "SELECT * FROM food";

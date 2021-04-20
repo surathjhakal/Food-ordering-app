@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php
 
   $sql = "SELECT id,title, image_name, active FROM category";

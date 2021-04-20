@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('./loginCheck.php') ?>
 <?php 
   $id=$_GET['id'];
   $category=$_GET['category'];

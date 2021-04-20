@@ -20,4 +20,5 @@
         <a class="nav-link navbar_options" href="./adminLogout.php">Logout</a>
     </li>
 </ul>
-<?php include('../reusePages/navbar/navbarDown.php') ?>
+</div>
+</nav>

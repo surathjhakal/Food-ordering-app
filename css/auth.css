@@ -53,3 +53,10 @@
   text-align: center;
   margin-bottom: 2rem;
 }
+
+.account {
+  margin-top: 1.6rem;
+}
+.account_check {
+  text-decoration: none;
+}
