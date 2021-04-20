@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="../css/order.css" />
     <link rel="stylesheet" href="../css/foods.css" />
     <link rel="stylesheet" href="../css/adminManage.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/payment.css" />
     <link rel="stylesheet" href="../css/index.css" />
   </head>
 
