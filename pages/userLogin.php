@@ -1,7 +1,7 @@
 <?php include('../config/constants.php') ?>
 <?php
     if(isset($_SESSION['user'])){
-        echo "<script type='text/javascript'>  window.location='.index.php'; </script>";
+        echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
     }
 ?>
 <!DOCTYPE html>

@@ -5,6 +5,11 @@
   $sql="SELECT * FROM food WHERE id=$id";
   $result=mysqli_query($conn,$sql);
   $data=mysqli_fetch_assoc($result);
+
+  $email=$_SESSION['user'];
+  $sql1 = "SELECT * FROM users WHERE email='$email'";
+  $result1 = mysqli_query($conn, $sql1);
+  $row1=mysqli_fetch_assoc($result1)
 ?>
 
 <?php include('../reusePages/base.php') ?>
@@ -51,6 +56,7 @@
               placeholder="E.g. Surath Jhakal"
               class="user_data_info"
               required
+              value="<?php echo $row1['full_name'] ?>"
             />
 
             <div class="user_info_title">Phone Number</div>
@@ -60,6 +66,7 @@
               placeholder="E.g. 9843xxxxxx"
               class="user_data_info"
               required
+              value="<?php echo $row1['phone'] ?>"
             />
 
             <div class="user_info_title">Email</div>
@@ -69,6 +76,7 @@
               placeholder="E.g. jhakal.surath@gmail.com"
               class="user_data_info"
               required
+              value="<?php echo $email ?>"
             />
 
             <div class="user_info_title">Address</div>
@@ -93,24 +101,15 @@
     <?php include('../reusePages/footer.php') ?>
     <?php
     if(isset($_POST['submit'])){
-        date_default_timezone_set("Asia/Kolkata");
         $customer_name=$_POST['fullName'];
         $customer_contact=$_POST['contact'];
         $customer_email=$_POST['email'];
         $customer_address=$_POST['address'];
         $quantity=$_POST['quantity'];
         $total=(double)$quantity*$data['price'];
-        $date=date('Y-m-d H:i:s');
-
-        $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_name,customer_contact,customer_email,customer_address,order_time) 
-        VALUES ('$id','$quantity','$total','active','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
-        $result=mysqli_query($conn,$sql_order_query);
-        if($result){
-          $_SESSION['order_confirmed']="Your order has been confirmed $customer_name, Hurray!!!";
-          echo "<script type='text/javascript'>  window.location='index.php'; </script>";
-        }else{
-          $_SESSION['order_confirmed']="Your order has not been confirmed because of some technical issue";
-        }
+        $_SESSION['order']=true;
+        $_SESSION['order_data']=[$customer_name, $customer_contact, $customer_email, $customer_address, $quantity, $total];
+        echo "<script type='text/javascript'>  window.location='./payment.php?id=$id'; </script>";
         mysqli_close($conn);
       }
     ?>

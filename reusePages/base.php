@@ -1,3 +1,9 @@
+<?php
+  $email=$_SESSION['user'];
+  $sql1 = "SELECT * FROM users WHERE email='$email'";
+  $result1 = mysqli_query($conn, $sql1);
+  $row=mysqli_fetch_assoc($result1)
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,8 +33,8 @@
     <link rel="stylesheet" href="../css/foods.css" />
     <link rel="stylesheet" href="../css/adminManage.css" />
     <link rel="stylesheet" href="../css/profile.css" />
-    <link rel="stylesheet" href="../css/payment.css" />
     <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/payment.css" />
   </head>
 
   <body>
