@@ -4,6 +4,8 @@
   $sql = "SELECT * FROM food WHERE featured='true'";
   $result = mysqli_query($conn, $sql);
   $count=0;
+  $codes=[['75%','30.30.30','FIRST'],['40%','30.30.30','TRYNEW'],['50%','30.30.30','APRIL']];
+  $_SESSION['codes']=$codes;
 ?>
 <?php include('../reusePages/base.php') ?>
     <div class="food_app">

@@ -61,6 +61,8 @@
             $row=mysqli_fetch_assoc($result);
             if(password_verify($password,$row['password'])){
                 $_SESSION['user']= $email;
+                $_SESSION['offers']=true;
+                $_SESSION['notify']=true;
                 echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
             }else{
                 $_SESSION['wrong_password']="Wrong password entered!!";

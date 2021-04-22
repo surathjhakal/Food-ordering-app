@@ -35,7 +35,7 @@
             $result = mysqli_query($conn, $sql);
           }
           $counter=0;
-          while($counter<((int)mysqli_num_rows($result)/2))
+          while($counter<=((int)mysqli_num_rows($result)/2))
           {
         ?>
           <div class="food_item_line">

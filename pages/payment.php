@@ -10,7 +10,6 @@
   $sql="SELECT * FROM food WHERE id=$id";
   $result=mysqli_query($conn,$sql);
   $data=mysqli_fetch_assoc($result);
-
 ?>
 
 <?php include('../reusePages/base.php') ?>
@@ -19,6 +18,7 @@
     <div class="payment">
       <div class="payment_header">
         <h1>Confirm Order</h1>
+        <p id="promocode_applied"></p>
         <p><i class="fas fa-times"></i></p>
       </div>
       <hr />
@@ -26,17 +26,19 @@
         <div class="payment_ticket_details">
           <div class="payment_ticket_image">
             <div class="payment_ticket_header"></div>
-            <img
-              src="../images/<?php echo $data["image_name"]; ?>"
-              alt="ticket_image"
-            />
+            <img src="../images/<?php echo $data["image_name"]; ?>" alt="ticket_image" />
             <div class="payment_ticket_info">
               <h1><?php echo $data["title"]; ?></h1>
               <div class="payment_ticket_price">
-                <p class="payment_ticket_price_value">₹<?php echo $_SESSION['order_data'][5]?></p>
-                <p>⭐⭐⭐⭐⭐</p>
+                <p class="payment_ticket_price_value" id="oldValue">Total: ₹<span><?php echo $_SESSION['order_data'][5]?></span></p>
+                <p>Qnty: <?php echo $_SESSION['order_data'][4]?></p>
               </div>
-              <p>Qnty: <?php echo $_SESSION['order_data'][4]?></p>
+              <p class="payment_ticket_price_value" id="updated">Total: ₹ <span id="newTotal"></span></p>
+              <div class="promocode_verify">
+                <div style="padding-right:2px;">PromoCode: </div>
+                <input type="text" id="promo">
+                <button type="button" style="box-shadow:none" class="btn btn-success verify" onclick="check()">Verify</button>
+              </div>
             </div>
           </div>
           <div class="payment_cards">
@@ -90,30 +92,68 @@
             </div>
           </div>
           <form action="" method="POST">
+          <input type="text" style="font-size: 0.1px;" name="getTotal" id="getTotal" value="200"></input>
           <button type="submit" name="submit" class="pay_now">Pay Now</button>
           </form>
         </div>
       </div>
     </div>
-    </div> 
+    </div>
+    <script type="text/javascript">
+      function check(){
+        const promo=document.getElementById('promo').value;
+        let totalElement=document.getElementById('updated');
+        let newTotal=document.getElementById('newTotal');
+        let oldValue=document.getElementById('oldValue');
+        let promocode_applied=document.getElementById('promocode_applied');
+        let getTotal=document.getElementById('getTotal');
+        let i=0;
+        let codes=[['75','30.30.30','FIRST'],['40','30.30.30','TRYNEW'],['50','30.30.30','APRIL']];
+        
+        while(codes.length){
+          if(codes[i][2]==promo){
+            let total=<?php echo $_SESSION['order_data'][5]?>;
+            let n=total-(codes[i][0]*total)/100; 
+            newTotal.innerText=n;
+            getTotal.value=n;
+            totalElement.style.display="flex";
+            oldValue.style.textDecoration="line-through";
+            promocode_applied.innerText="(Hurray!! Promo Code Applied)";
+            promocode_applied.style.color="green";
+            promocode_applied.style.display="flex";
+            break
+          }else{
+            getTotal.value=oldValue.value;
+            totalElement.style.display="none";
+            oldValue.style.textDecoration="none";
+            promocode_applied.innerText="(Wrong Promo Code Applied)";
+            promocode_applied.style.color="red";
+            // promocode_applied.style.display="none";
+          }
+          i++;
+        }
+      }
+    </script>
     <?php include('../reusePages/footerRare.php') ?>
     <?php
     if(isset($_POST['submit'])){
         date_default_timezone_set("Asia/Kolkata");
-        echo $customer_name=$_SESSION['order_data'][0];
+        $customer_name=$_SESSION['order_data'][0];
         $customer_contact=$_SESSION['order_data'][1];
         $customer_email=$_SESSION['order_data'][2];
         $customer_address=$_SESSION['order_data'][3];
         $quantity=$_SESSION['order_data'][4];
-        $total=$_SESSION['order_data'][5];
+        $total=$_POST['getTotal'];
         $date=date('Y-m-d H:i:s');
 
         $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_name,customer_contact,customer_email,customer_address,order_time) 
-        VALUES ('$id','$quantity','$total','active','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
+        VALUES ('$id','$quantity','$total','Not Delevired','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
         $result2=mysqli_query($conn,$sql_order_query);
         if($result2){
-            unset($_SESSION['order']);
-            unset($_SESSION['order_data']);
+          unset($_SESSION['order']);
+          unset($_SESSION['order_data']);
+          $_SESSION['notify']=true;
+          $_SESSION['order_notify']=true;
           $_SESSION['order_confirmed']="Your order has been confirmed $customer_name, Hurray!!!";
           echo "<script type='text/javascript'>  window.location='./index.php'; </script>";
         }else{

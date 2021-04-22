@@ -134,3 +134,9 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.star {
+  color: red;
+  padding-left: 0.3rem;
+  font-size: 0.6rem;
+}

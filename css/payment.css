@@ -81,7 +81,7 @@
 .payment_ticket_image img {
   height: 80px;
   width: 80px;
-  top: 125px;
+  top: 110px;
   position: absolute;
   left: 60px;
   border-radius: 0.6rem;
@@ -257,4 +257,37 @@
   cursor: pointer;
   font-weight: 500;
   /* line-height: initial; */
+}
+
+.promocode_verify {
+  display: flex;
+  align-items: center;
+}
+
+.promocode_verify input {
+  width: 40%;
+  padding: 1px 4px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.verify {
+  border: 1px solid transparent;
+  padding: 2px 4px;
+  margin-left: 2px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  box-shadow: none;
+  outline: none;
+}
+
+#updated {
+  display: none;
+}
+
+#promocode_applied {
+  display: none;
 }

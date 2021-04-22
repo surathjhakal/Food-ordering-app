@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="../css/profile.css" />
     <link rel="stylesheet" href="../css/index.css" />
     <link rel="stylesheet" href="../css/payment.css" />
+    <link rel="stylesheet" href="../css/promoCode.css" />
   </head>
 
   <body>

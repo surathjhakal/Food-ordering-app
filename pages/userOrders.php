@@ -2,9 +2,10 @@
 <?php include('./loginCheck.php') ?>
 <?php
   $email=$_SESSION['user'];
-  $sql = "SELECT * FROM order_detail WHERE customer_email='$email'";
+  $sql = "SELECT * FROM order_detail WHERE customer_email='$email' ORDER BY order_time desc";
   $result = mysqli_query($conn, $sql);
   $count=0;
+  unset($_SESSION['order_notify'])
 ?>
 <?php include('../reusePages/base.php') ?>
     <div class="foods">
