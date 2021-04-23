@@ -9,7 +9,7 @@
         <a class="nav-link navbar_options" href="foods.php">Foods</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link navbar_options" href="#">Contact</a>
+        <a class="nav-link navbar_options" href="contact.php">Contact</a>
     </li>
     <li class="nav-item navbar_other_options">
         <p class="navbar_options" ><i class="fas fa-align-justify"></i></p>

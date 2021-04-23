@@ -10,7 +10,7 @@
 <?php include('../reusePages/base.php') ?>
     <div class="category_foods">
     <?php include('./navbar.php') ?>
-      <div class="food_menu_top">
+      <div class="food_menu_top" style="width: 80%;margin: 1rem auto 0 auto;">
         <div class="food_menu">
           <h2 class="food_menu_title">Food Items in "<?php echo $category; ?>"</h2>
           <input
@@ -66,4 +66,10 @@
       </div>
     </div>
   </div>
-  <?php include('../reusePages/footer.php') ?>
+  <?php
+        if(mysqli_num_rows($result)>4){
+            include('../reusePages/footer.php');
+        }else{
+            include('../reusePages/footerRare.php'); 
+        }
+    ?>

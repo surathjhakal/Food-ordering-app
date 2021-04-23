@@ -22,6 +22,22 @@
                 unset($_SESSION['order_confirmed']);
               }
             ?>
+            <?php
+              if(isset($_SESSION['order_cancelled'])){
+                echo "<p style='text-align:center;font-size:1.6rem;color:red'>(";
+                echo $_SESSION['order_cancelled'];
+                echo ")</p>";
+                unset($_SESSION['order_cancelled']);
+              }
+            ?>
+            <?php
+              if(isset($_SESSION['message_posted'])){
+                echo "<p style='text-align:center;font-size:1.6rem;color:green'>(";
+                echo $_SESSION['message_posted'];
+                echo ")</p>";
+                unset($_SESSION['message_posted']);
+              }
+            ?>
             <h2 class="food_menu_title">Top Rated Food</h2>
             <?php 
               $counter=0;

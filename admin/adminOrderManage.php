@@ -2,7 +2,7 @@
 <?php include('./loginCheck.php') ?>
 <?php include('../reusePages/base.php') ?>
 <?php
-    $sql="SELECT * FROM order_detail";
+    $sql="SELECT * FROM order_detail ORDER BY order_time desc";
     $result = mysqli_query($conn, $sql);
 ?>
 <div class="adminManage">
@@ -22,6 +22,7 @@
             <th scope="col">Email Id</th>
             <th scope="col">Address</th>
             <th scope="col">Time</th>
+            <th scope="col">Order Status</th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,7 @@
                     <td><?php echo $row['customer_email']; ?></td>
                     <td><?php echo $row['customer_address']; ?></td>
                     <td><?php echo $row['order_time']; ?></td>
+                    <td><?php echo $row['status']; ?></td>
                 </tr>
             <?php
                 $sr+=1;

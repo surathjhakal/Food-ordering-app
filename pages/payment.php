@@ -126,6 +126,7 @@
             getTotal.value=oldValue.value;
             totalElement.style.display="none";
             oldValue.style.textDecoration="none";
+            promocode_applied.style.display="flex";
             promocode_applied.innerText="(Wrong Promo Code Applied)";
             promocode_applied.style.color="red";
             // promocode_applied.style.display="none";
@@ -147,7 +148,7 @@
         $date=date('Y-m-d H:i:s');
 
         $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_name,customer_contact,customer_email,customer_address,order_time) 
-        VALUES ('$id','$quantity','$total','Not Delevired','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
+        VALUES ('$id','$quantity','$total','Not Delivered','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
         $result2=mysqli_query($conn,$sql_order_query);
         if($result2){
           unset($_SESSION['order']);

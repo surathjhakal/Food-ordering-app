@@ -26,7 +26,7 @@
                 $row1 = mysqli_fetch_assoc($result1);
         ?>
         <div class="alert alert-success alert-dismissible fade show" style="width:80%;" role="alert">
-            Your <strong><?php echo $row1['title']?></strong> order has been confirmed & you will get your order in 10 mins.
+            Your <strong><?php echo $row1['title']?></strong> order has been confirmed & you will get your order in 10 mins or You can <strong>cancel</strong> the food within 10 min..
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
