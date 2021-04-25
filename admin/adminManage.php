@@ -73,4 +73,4 @@
         <a href="./addAdmin.php"><button class="addAdminButton">Add Admin</button></a>
     </div>
 </div>
-<?php include('../reusePages/footer.php') ?>
+<?php include('../reusePages/footerRare.php') ?>

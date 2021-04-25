@@ -5,6 +5,9 @@
         <a class="nav-link navbar_options" href="./adminManage.php">Admin</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link navbar_options" href="./users.php">Users</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link navbar_options" href="./adminIndex.php">Home</a>
     </li>
     <li class="nav-item">

@@ -80,5 +80,11 @@
         </div>
       </div>
     </div>
-    <?php include('../reusePages/footer.php') ?>
+    <?php
+        if(mysqli_num_rows($result)>6){
+            include('../reusePages/footer.php');
+        }else{
+            include('../reusePages/footerRare.php'); 
+        }
+    ?>
 

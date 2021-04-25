@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="../css/payment.css" />
     <link rel="stylesheet" href="../css/promoCode.css" />
     <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/adminIndex.css" />
   </head>
 
   <body>

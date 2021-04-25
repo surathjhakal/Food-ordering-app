@@ -32,6 +32,14 @@
                 }
             ?>
             <?php
+                if(isset($_SESSION['not_registered'])){
+                    $message=$_SESSION['not_registered'];
+                    echo "<h2 style='color:red'>($message)</h3>";
+                    echo "<hr><br>";
+                    unset($_SESSION['not_registered']);
+                }
+            ?>
+            <?php
                 if(isset($_SESSION['wrong_password'])){
                     $message=$_SESSION['wrong_password'];
                     echo "<h2 style='color:red'>($message)</h3>";
@@ -47,8 +55,7 @@
             <p class="account">Don't Have an Account? <a class="account_check" href="./userRegister.php">Click Here</a></p>
         </form>
     </div>
-</body>
-</html>
+<?php include('../reusePages/footerRare.php')?>
 <?php
     if(isset($_POST['submit'])){
         $password=$_POST['password'];
@@ -68,6 +75,9 @@
                 $_SESSION['wrong_password']="Wrong password entered!!";
                 echo "<script type='text/javascript'>  window.location=''; </script>";
             }
+        }else{
+            $_SESSION['not_registered']="There is no account with this email";
+            echo "<script type='text/javascript'>  window.location=''; </script>";
         }
     }
 ?>

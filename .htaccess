@@ -1,1 +1,2 @@
 ErrorDocument 404 /food-app/404page.php
+AddType application/x-httpd-php .phtml

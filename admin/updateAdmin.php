@@ -25,7 +25,7 @@
         </form>
     </div>
 </div>
-<?php include('../reusePages/footer.php') ?>
+<?php include('../reusePages/footerRare.php') ?>
 
 <?php
     if(isset($_POST['submit'])){

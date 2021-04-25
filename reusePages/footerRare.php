@@ -1,6 +1,6 @@
 <div class="dim"></div>
 <div class="footer" style="position: absolute;width: 100%;bottom: 0;">
-        <p style="margin-bottom:0">All rights reserved. Designed By <a href="#">Surath Jhakal </a></p>
+        <p style="margin-bottom:0">All rights reserved. Designed By <a href="#" style="text-decoration:none">Surath Jhakal </a></p>
       </div>
     </div>
   </body>

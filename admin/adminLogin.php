@@ -39,8 +39,7 @@
             <button type="submit" name="submit" class="loginButton">Login</button>
         </form>
     </div>
-</body>
-</html>
+<?php include('../reusePages/footerRare.php')?>
 <?php
     if(isset($_POST['submit'])){
         $password=$_POST['password'];

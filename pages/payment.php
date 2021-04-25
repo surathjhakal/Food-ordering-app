@@ -92,7 +92,7 @@
             </div>
           </div>
           <form action="" method="POST">
-          <input type="text" style="font-size: 0.1px;" name="getTotal" id="getTotal" value="200"></input>
+          <input type="text" style="font-size: 0px;" name="getTotal" id="getTotal"></input>
           <button type="submit" name="submit" class="pay_now">Pay Now</button>
           </form>
         </div>
