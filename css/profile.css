@@ -1,15 +1,15 @@
 .profilePage_top {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
   background-color: rgb(216, 221, 221);
+  margin: 1.5rem 0;
 }
 
 .profilePage {
-  height: 65vh;
+  height: 100%;
   width: 600px;
   background-color: rgb(245, 243, 243);
   display: flex;
@@ -78,6 +78,7 @@
   flex: 0.05;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .profilePage_save_changes button {
@@ -95,4 +96,24 @@
 
 .profilePage_info input:focus {
   background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .profilePage_top {
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+  .profilePage {
+    height: 100%;
+  }
+  .profilePage_header {
+    gap: 1rem;
+  }
+  .profilePage_info_line1,
+  .profilePage_info_line2,
+  .profilePage_info_line3,
+  .profilePage_info_line4 {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

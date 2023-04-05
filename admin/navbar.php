@@ -8,7 +8,7 @@
         <a class="nav-link navbar_options" href="./users.php">Users</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link navbar_options" href="./adminIndex.php">Home</a>
+        <a class="nav-link navbar_options" href="./index.php">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link navbar_options" href="./adminCategories.php">Categories</a>

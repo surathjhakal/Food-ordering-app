@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurent app</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="adminLogin">
@@ -50,7 +50,7 @@
 
         if(mysqli_num_rows($result)>0){
             $row=mysqli_fetch_assoc($result);
-            if(password_verify($password,$row['password'])){
+            if($password==$row['password']){
                 $_SESSION['admin']= $email;
                 echo "<script type='text/javascript'>  window.location='./adminManage.php'; </script>";
             }else{

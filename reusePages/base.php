@@ -1,9 +1,3 @@
-<?php
-  $email=$_SESSION['user'];
-  $sql1 = "SELECT * FROM users WHERE email='$email'";
-  $result1 = mysqli_query($conn, $sql1);
-  $row=mysqli_fetch_assoc($result1)
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,17 +21,17 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/categories.css" />
-    <link rel="stylesheet" href="../css/order.css" />
-    <link rel="stylesheet" href="../css/foods.css" />
-    <link rel="stylesheet" href="../css/adminManage.css" />
-    <link rel="stylesheet" href="../css/profile.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/payment.css" />
-    <link rel="stylesheet" href="../css/promoCode.css" />
-    <link rel="stylesheet" href="../css/contact.css" />
-    <link rel="stylesheet" href="../css/adminIndex.css" />
+    <link rel="stylesheet" href="../css/navbar.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/categories.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/order.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/foods.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/adminManage.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/profile.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/index.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/payment.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/promoCode.css?v=<?php echo time(); ?>" />
+    <link rel="stylesheet" href="../css/contact.css?v=<?php echo time(); ?>" />
+    <!-- <link rel="stylesheet" href="../css/adminIndex.css" /> -->
   </head>
 
   <body>

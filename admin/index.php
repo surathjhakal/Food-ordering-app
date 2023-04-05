@@ -9,7 +9,7 @@
     <div class="admin_dashboard" style="margin:auto;width:90%">
         <h1 style="margin:1.6rem 0;text-align:center;">Admin Dashboard / Overview</h1>
         <hr>
-        <div style="display:flex;justify-content:center;margin-top:2.5rem">
+        <div class="admin_dashboard_box">
             <?php
                 $i=0;
                 while($i<sizeof($query)){

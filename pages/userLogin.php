@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurent app</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="adminLogin">
@@ -60,14 +60,13 @@
     if(isset($_POST['submit'])){
         $password=$_POST['password'];
         $email=$_POST['email'];
-
         $sql_order_query="SELECT * FROM users WHERE email='$email'";
         $result=mysqli_query($conn,$sql_order_query);
-
         if(mysqli_num_rows($result)>0){
             $row=mysqli_fetch_assoc($result);
             if(password_verify($password,$row['password'])){
                 $_SESSION['user']= $email;
+                $_SESSION['user_id']=$row['id'];
                 $_SESSION['offers']=true;
                 $_SESSION['notify']=true;
                 echo "<script type='text/javascript'>  window.location='./index.php'; </script>";

@@ -1,5 +1,5 @@
 <div class="dim"></div>
-<div class="footer" style="position: absolute;width: 100%;bottom: 0;">
+<div class="footer">
         <p style="margin-bottom:0">All rights reserved. Designed By <a href="#" style="text-decoration:none">Surath Jhakal </a></p>
       </div>
     </div>
@@ -24,5 +24,5 @@
       }
   }
 
-  navbar_profile.addEventListener("click", showProfile);
+  if(navbar_profile) navbar_profile.addEventListener("click", showProfile);
 </script>

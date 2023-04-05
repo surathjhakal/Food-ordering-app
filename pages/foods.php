@@ -1,7 +1,10 @@
 <?php include('../config/constants.php') ?>
 <?php include('./loginCheck.php') ?>
 <?php
-  $foodSearch=$_GET["food_search"];
+  $foodSearch="";
+  if(isset($_GET["food_search"])){
+    $foodSearch=$_GET["food_search"];
+  }
   $sql = "SELECT * FROM food";
   $result = mysqli_query($conn, $sql);
   $count=0;

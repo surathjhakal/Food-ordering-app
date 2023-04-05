@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurent app</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/auth.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="adminLogin">
@@ -41,7 +41,7 @@
             <p class="inputTitle">Password:</p>
             <input class="inputVal" name="password" type="password">
             <button type="submit" name="submit" class="loginButton">Register</button>
-            <p class="account">Don't Have an Account? <a class="account_check" href="./userLogin.php">Click Here</a></p>
+            <p class="account">Have an Account? <a class="account_check" href="./userLogin.php">Click Here</a></p>
         </form>
     </div>
 </body>

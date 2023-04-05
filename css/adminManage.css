@@ -27,3 +27,32 @@
   margin: auto;
   width: 50%;
 }
+
+.table-responsive {
+  display: table;
+}
+
+.admin_dashboard_box {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .adminManageContent {
+    margin: 1rem;
+  }
+  .table-responsive {
+    display: block;
+  }
+  .adminManageContent a {
+    margin-bottom: 6px;
+  }
+  .admin_dashboard_box {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .addAdminForm {
+    width: 90%;
+  }
+}

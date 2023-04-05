@@ -1,8 +1,8 @@
 <?php include('../config/constants.php') ?>
 <?php include('./loginCheck.php') ?>
 <?php
-  $email=$_SESSION['user'];
-  $sql = "SELECT * FROM order_detail WHERE customer_email='$email' ORDER BY order_time desc";
+  $customer_id=$_SESSION['user_id'];
+  $sql = "SELECT * FROM order_detail WHERE customer_id='$customer_id' ORDER BY order_time desc";
   $result = mysqli_query($conn, $sql);
   $count=0;
   unset($_SESSION['order_notify'])
@@ -69,14 +69,14 @@
                 <?php
                     if($cancelTime>=$timestamp and $row1['status']!="Cancelled" and $row1['status']!="Delivered" ){
                       ?>
-                        <a style="color:#fa687e;border:1px solid #fa687e;" href="./cancelOrder.php?id=<?php echo $row1['order_id'] ?>" class="food_menu_orderNow">Cancel Order</a>
+                         <a href="./cancelOrder.php?id=<?php echo $row1['id'] ?>" class="food_menu_orderNow" style="color:#fa687e;border:1px solid #fa687e;">Cancel Order</a>
                     <?php
                     }else{?>
-                      <a href="./order.php?id=<?php echo $row['id'] ?>" class="food_menu_orderNow" style="color: green;border: 1px solid green">Again Order</a>
+                      <a href="./order.php?id=<?php echo $row1['food_id'] ?>" class="food_menu_orderNow" style="color: green;border: 1px solid green">Again Order</a>
                     <?php
                       if($row1['status']!="Cancelled"){
-                          $id=$row1['order_id'];
-                          $sql2 = "UPDATE order_detail SET status='Delivered' WHERE order_id=$id";
+                          $id=$row1['id'];
+                          $sql2 = "UPDATE order_detail SET status='Delivered' WHERE id=$id";
                           $result2=mysqli_query($conn,$sql2);
                       // $row2 = mysqli_fetch_assoc($result2);
                       }

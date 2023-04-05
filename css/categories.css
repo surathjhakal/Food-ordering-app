@@ -16,9 +16,9 @@
 
 .food_categories_line {
   display: flex;
-  width: 75%;
   margin: auto;
   margin-top: 1.6rem;
+  gap: 1rem;
 }
 
 .food_categories_box {
@@ -52,4 +52,19 @@
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   height: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  .food_categories_line {
+    flex-direction: column;
+    width: 100%;
+  }
+  .food_categories_box {
+    margin: 1rem 0;
+  }
+  .food_categories_content {
+    width: 90%;
+    padding: 1rem;
+    align-items: center;
+  }
 }

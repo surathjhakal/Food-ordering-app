@@ -21,3 +21,26 @@
 .food_search:focus {
   box-shadow: 0 0 6px rgb(212, 82, 82);
 }
+
+.notification_box {
+  flex-direction: column;
+  min-height: 80vh;
+  justify-content: flex-start;
+}
+
+.notification {
+  width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .foods_menu_top {
+    width: 95%;
+    padding: 1rem;
+  }
+  .food_menu_title {
+    font-size: 26px;
+  }
+  .notification {
+    width: 100%;
+  }
+}

@@ -113,6 +113,7 @@
         while(codes.length){
           if(codes[i][2]==promo){
             let total=<?php echo $_SESSION['order_data'][5]?>;
+            total=parseInt(total);
             let n=total-(codes[i][0]*total)/100; 
             newTotal.innerText=n;
             getTotal.value=n;
@@ -139,16 +140,22 @@
     <?php
     if(isset($_POST['submit'])){
         date_default_timezone_set("Asia/Kolkata");
+        $customer_id=$_SESSION['user_id'];
         $customer_name=$_SESSION['order_data'][0];
         $customer_contact=$_SESSION['order_data'][1];
         $customer_email=$_SESSION['order_data'][2];
         $customer_address=$_SESSION['order_data'][3];
         $quantity=$_SESSION['order_data'][4];
         $total=$_POST['getTotal'];
+        if($total=="") {
+          $total=$_SESSION['order_data'][5];
+        }else{
+          $total=(int)$total;
+        }
         $date=date('Y-m-d H:i:s');
 
-        $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_name,customer_contact,customer_email,customer_address,order_time) 
-        VALUES ('$id','$quantity','$total','Not Delivered','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
+        $sql_order_query="INSERT INTO order_detail (food_id,quantity,total,status,customer_id,customer_name,customer_contact,customer_email,customer_address,order_time) 
+        VALUES ('$id','$quantity','$total','Not Delivered','$customer_id','$customer_name','$customer_contact','$customer_email','$customer_address','$date') "; 
         $result2=mysqli_query($conn,$sql_order_query);
         if($result2){
           unset($_SESSION['order']);

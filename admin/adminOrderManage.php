@@ -10,7 +10,7 @@
     <div class="adminManageContent">
         <h2>Manage Orders</h2>
         <hr>
-        <table class="table">
+        <table class="table table-responsive">
         <thead class="thead-light">
             <tr>
             <th scope="col">Sr</th>

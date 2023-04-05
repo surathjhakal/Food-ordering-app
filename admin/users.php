@@ -2,7 +2,7 @@
 <?php include('./loginCheck.php') ?>
 <?php include('../reusePages/base.php') ?>
 <?php
-    $sql="SELECT * FROM users ORDER BY time desc";
+    $sql="SELECT * FROM users";
     $result = mysqli_query($conn, $sql);
 ?>
 <div class="adminManage">
@@ -10,7 +10,7 @@
     <div class="adminManageContent">
         <h2>Website Users</h2>
         <hr>
-        <table class="table">
+        <table class="table table-responsive">
         <thead class="thead-light">
             <tr>
             <th scope="col">Sr</th>
@@ -19,7 +19,6 @@
             <th scope="col">Phone No.</th>
             <th scope="col">Gender</th>
             <th scope="col">Location</th>
-            <th scope="col">Register Time</th>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +33,6 @@
                     <td><?php echo $row['phone']; ?></td>
                     <td><?php echo $row['gender']; ?></td>
                     <td><?php echo $row['location']; ?></td>
-                    <td><?php echo $row['time']; ?></td>
                 </tr>
             <?php
                 $sr+=1;

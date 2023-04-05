@@ -34,7 +34,7 @@
                 unset($_SESSION['food_updated']);
             }
         ?>
-        <table class="table">
+        <table class="table table-responsive">
         <thead class="thead-light">
             <tr>
             <th scope="col">Sr</th>

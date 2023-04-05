@@ -23,6 +23,5 @@
           show = true;
       }
   }
-
-  navbar_profile.addEventListener("click", showProfile);
+  if(navbar_profile) navbar_profile.addEventListener("click", showProfile);
 </script>

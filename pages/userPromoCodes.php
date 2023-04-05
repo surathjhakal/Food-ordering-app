@@ -2,9 +2,9 @@
 <?php include('./loginCheck.php') ?>
 <?php
     unset($_SESSION['offers']);
-    $email=$_SESSION['user'];
-    $sql = "SELECT * FROM order_detail WHERE customer_email='$email'";
-    $result = mysqli_query($conn, $sql);
+    // $customer_id=$_SESSION['user_id'];
+    // $sql = "SELECT * FROM order_detail WHERE customer_id='$customer_id'";
+    // $result = mysqli_query($conn, $sql);
     $codes=$_SESSION['codes']
 ?>
 <?php include('../reusePages/base.php') ?>

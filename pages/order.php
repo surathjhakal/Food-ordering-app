@@ -106,7 +106,7 @@
         $customer_email=$_POST['email'];
         $customer_address=$_POST['address'];
         $quantity=$_POST['quantity'];
-        $total=(double)$quantity*$data['price'];
+        $total=(int)$quantity*(int)$data['price'];
         $_SESSION['order']=true;
         $_SESSION['order_data']=[$customer_name, $customer_contact, $customer_email, $customer_address, $quantity, $total];
         echo "<script type='text/javascript'>  window.location='./payment.php?id=$id'; </script>";

@@ -55,3 +55,15 @@ legend {
   border-radius: 0.4rem;
   border: none;
 }
+
+@media screen and (max-width: 600px) {
+  .food_order_content {
+    width: 90%;
+  }
+  .food_order_form {
+    width: 100%;
+  }
+  .selected_food {
+    flex-direction: column;
+  }
+}

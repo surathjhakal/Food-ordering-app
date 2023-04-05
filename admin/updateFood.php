@@ -22,10 +22,6 @@
                 <input type="text"  name="title"  value="<?php echo $row2["title"];?>" class="form-control" id="exampleInputText1"  placeholder="Enter Your Food Name">
             </div>
             <div class="form-group">
-                <label for="exampleFormControldesc1">Description</label>
-                <textarea  class="form-control" name="description" placeholder="Enter description about food.." id="exampleFormControldesc1" rows="3"><?php echo $row2['description']?></textarea>
-            </div>
-            <div class="form-group">
                 <label for="exampleInputprice1">Price</label>
                 <input type="text" name="price" value="<?php echo $row2['price']?>" class="form-control" id="exampleInputprice1"  placeholder="Enter Price: 200.00">
             </div>
@@ -55,7 +51,6 @@
     if(isset($_POST['submit'])){
         echo $title=$_POST['title'];
         echo $imageName=$_POST['imageName'];
-        echo $description=$_POST['description'];
         echo $price=$_POST['price'];
 
         echo $category=$_POST['category'];
@@ -67,7 +62,7 @@
         echo $featured=$_POST['featured'];
         echo $active=$_POST['active'];
 
-        $sql_order_query1="UPDATE food SET title='$title',price='$price',description='$description',image_name='$imageName',category_id='$categoryId',featured='$featured',active='$active' WHERE id=$id"; 
+        $sql_order_query1="UPDATE food SET title='$title',price='$price',image_name='$imageName',category_id='$categoryId',featured='$featured',active='$active' WHERE id=$id"; 
         $result2=mysqli_query($conn,$sql_order_query1);
 
         if($result2){

@@ -2,7 +2,7 @@
 <?php include('./loginCheck.php') ?>
 <?php
   $id=$_GET['id'];
-  $sql="UPDATE order_detail SET status='Cancelled' WHERE order_id=$id";
+  $sql="UPDATE order_detail SET status='Cancelled' WHERE id=$id";
   $result = mysqli_query($conn, $sql);
   if($result){
     $_SESSION['order_cancelled']="Your Order has been Cancelled Successfully,you will get your refund within 5 min";

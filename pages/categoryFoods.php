@@ -10,7 +10,7 @@
 <?php include('../reusePages/base.php') ?>
     <div class="category_foods">
     <?php include('./navbar.php') ?>
-      <div class="food_menu_top" style="width: 80%;margin: 1rem auto 0 auto;">
+      <div class="food_menu_top">
         <div class="food_menu">
           <h2 class="food_menu_title">Food Items in "<?php echo $category; ?>"</h2>
           <input

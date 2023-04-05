@@ -67,3 +67,9 @@
   font-size: 4rem;
   color: #57c4a1;
 }
+
+@media screen and (max-width: 600px) {
+  .promocode {
+    flex-direction: column;
+  }
+}

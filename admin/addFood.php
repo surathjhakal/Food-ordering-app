@@ -16,10 +16,6 @@
                 <input type="text" name="imageName" class="form-control" id="exampleInputImageName1"  placeholder="Enter Image Name">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" name="description" placeholder="Enter description about food.." id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group">
                 <label for="exampleInputprice1">Price</label>
                 <input type="text" name="price" class="form-control" id="exampleInputprice1"  placeholder="Enter Price: 200.00">
             </div>
@@ -44,7 +40,6 @@
     if(isset($_POST['submit'])){
         echo $title=$_POST['title'];
         echo $imageName=$_POST['imageName'];
-        echo $description=$_POST['description'];
         echo $price=$_POST['price'];
 
         echo $category=$_POST['category'];
@@ -56,7 +51,7 @@
         echo $featured=$_POST['featured'];
         echo $active=$_POST['active'];
 
-        $sql_order_query="INSERT INTO food (title,description,price,image_name,category_id,featured,active) VALUES ('$title','$description','$price','$imageName','$categoryId','$featured','$active')"; 
+        $sql_order_query="INSERT INTO food (title,price,image_name,category_id,featured,active) VALUES ('$title','$price','$imageName','$categoryId','$featured','$active')"; 
         $result=mysqli_query($conn,$sql_order_query);
 
         if($result){

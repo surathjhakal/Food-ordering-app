@@ -1,10 +1,10 @@
     </div>
     </nav>
     <div class="page">
-        <h1>Hello, <?php echo explode(" ", $row['full_name'])[0] ?></h1>
+        <h1>Hello, <?php if(isset($row['full_name'])) echo explode(" ", $row['full_name'])[0]  ?></h1>
         <a href="./userProfile.php">Your Profile </a>
         <?php  
-          if($_SESSION['notify']){
+          if(isset($_SESSION['notify'])){
             echo "<a href='./notifications.php'>Notifications<span class='star'>✱<span></a>";
           }
           else{
@@ -12,7 +12,7 @@
           }
         ?>
         <?php  
-          if($_SESSION['order_notify']){
+          if(isset($_SESSION['order_notify'])){
             echo "<a href='./userOrders.php'>Your Orders<span class='star'>✱<span></a>";
           }
           else{
@@ -20,7 +20,7 @@
           }
         ?>
         <?php  
-          if($_SESSION['offers']){
+          if(isset($_SESSION['offers'])){
             echo "<a href='./userPromoCodes.php'>Promo Codes<span class='star'>✱<span></a>";
           }
           else{
