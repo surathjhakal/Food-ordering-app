@@ -16,11 +16,7 @@
 </head>
 <body>
     <div class="adminLogin">
-        <img
-            src="https://media4.giphy.com/media/cdJFgAkVX8izFZ5fj9/source.gif"
-            class="food_logo"
-            alt=""
-        />
+    <div class="brand_name">Swigato</div>
         <hr>
         <h1 class="adminLoginTitle">Registration Form</h1>
         <form class="adminLoginForm" style="height:440px" method="POST" action="">

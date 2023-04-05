@@ -20,6 +20,13 @@ body {
   outline: none;
 }
 
+.brand_name {
+  font-size: 26px;
+  font-style: italic;
+  color: #bc0000;
+  font-family: cursive;
+}
+
 .navbar_options {
   font-size: 1.2rem;
   margin: 0px 10px;

@@ -48,6 +48,13 @@
   background: transparent;
   outline: none;
 }
+.brand_name {
+  font-size: 26px;
+  font-style: italic;
+  color: #bc0000;
+  font-family: cursive;
+  padding: 1rem 1.5rem;
+}
 .adminLoginTitle {
   margin: 2rem 0;
   text-align: center;
